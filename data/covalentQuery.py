@@ -15,7 +15,6 @@ class Chain(Enum):
     Optimism = 10
     Polygon = 137
 
-
 class QueryBuilder:
 
     BASE_URL = 'https://api.covalenthq.com/v1'
@@ -94,8 +93,6 @@ class QueryBuilder:
             topicStr = ",".join(topic)
         
         return self.__conditionals(self.BASE_URL+f'/{chain.value}/events/topics/{topicStr}',page=page,pageSize=pageSize, extras= extras)
-    
-    
 
 
     def __conditionals(self, str,page, pageSize, extras = {}):
