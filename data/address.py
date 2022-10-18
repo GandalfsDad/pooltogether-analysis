@@ -1,4 +1,4 @@
-from .covalentQuery import Chain
+from .queryBuilder import Chain
 
 ADDRESSES = {
             'POOL':
