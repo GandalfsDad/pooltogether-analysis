@@ -10,3 +10,13 @@ def getBalances(chain,token,API_KEY):
     holders = sq.queryAll()
 
     return  {x['address']:int(x['balance'])/(1*10**int(x['contract_decimals'])) for x in holders}
+
+def getAllTokens(chain,address, API_KEY,ignoreDust = True):
+    qb = QueryBuilder(API_KEY,defaultPageSize=10000)
+    query = qb.getQuery(CovalentQueryType.Balances,chain,address = address)
+    sq = SequentialQuerier(query)
+
+    holders = sq.queryAll()
+
+    return  {x['contract_ticker_symbol']:int(x['balance'])/(1*10**int(x['contract_decimals'])) for x in holders if x['type']!= 'dust'}
+
