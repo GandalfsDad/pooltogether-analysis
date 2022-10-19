@@ -28,8 +28,10 @@ class SequentialQuerier:
         data = result['data']
 
         self.__page +=1
+
+        hasMore = False if data['pagination'] is None else data['pagination']['has_more']
         
-        return data['items'], data['pagination']['has_more']
+        return data['items'], hasMore
         
     def reset(self):
         self.__page = 0
