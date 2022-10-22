@@ -1,4 +1,3 @@
-# PoolTogether Wallet Split Analysis
+# PoolTogether Analysis
 
-This repo is just a look into wallet splitting events that have taken place in the PoolTogether protocol.
-I'm using this as a means to learn Covalent, so it may be clumsy at first.
+This repo is just a look into using the covalent API to do analysis on Pool Together protocol+users
