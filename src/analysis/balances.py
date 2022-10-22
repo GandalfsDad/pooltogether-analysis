@@ -18,5 +18,5 @@ def getAllTokens(chain,address, API_KEY,ignoreDust = True):
 
     holders = sq.queryAll()
 
-    return  {x['contract_ticker_symbol']:int(x['balance'])/(1*10**int(x['contract_decimals'])) for x in holders if x['type']!= 'dust'}
+    return  {(x['contract_address'],x['contract_name'],x['contract_ticker_symbol']):int(x['balance'])/(1*10**int(x['contract_decimals'])) for x in holders if x['type']!= 'dust'}
 
